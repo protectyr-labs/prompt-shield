@@ -43,6 +43,16 @@ Use `tag_untrusted()` on every piece of external text (user input, web scrapes, 
 - **`tag_untrusted()`** -- marks external content with trust boundary tags
 - **Extensible** -- add custom patterns via `extra_patterns` parameter
 
+## Use Cases
+
+**User-facing chatbots** -- Users type messages that go directly into LLM prompts. Scan every input before it reaches the model.
+
+**Web scraping pipelines** -- Your agent scrapes web pages for context. Any page could contain injection. Tag all scraped content as untrusted.
+
+**Multi-agent data passing** -- Agent A collects data from external sources and passes it to Agent B. Scan at the boundary to prevent injection propagation.
+
+**API response validation** -- Third-party APIs return text that gets included in prompts. Scan responses before inclusion.
+
 ## 20 Built-in Patterns
 
 | Category | Patterns |
